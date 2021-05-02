@@ -6,9 +6,46 @@
   padding: 0 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .title {
   color: #fff;
   font-size: 28px;
+  font-weight: 400;
+}
+
+.menuWrapper {
+  width: 206px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.photo {
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  border: 1px solid white;
+  box-sizing: border-box;
+  margin-right: 7px;
+  cursor: pointer;
+  img {
+    border-radius: 50%;
+    border: 1px solid #50CAFF;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
+.icon {
+  cursor: pointer;
+  height: 40px;
 }
