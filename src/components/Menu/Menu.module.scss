@@ -2,4 +2,40 @@
   height: 100vh;
   width: 190px;
   background-color: #003B72;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItem {
+  margin-bottom: 10px;
+}
+
+.header {
+  box-sizing: border-box;
+  height: 55px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.headerLogo {
+  color: white;
+  font-size: 14px;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+}
+
+.footerLogo {
+  margin-top: 4px;
+  padding-left: 20px;
 }

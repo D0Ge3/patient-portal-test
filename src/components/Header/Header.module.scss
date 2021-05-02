@@ -2,4 +2,13 @@
   height: 55px;
   width: 100%;
   background-color: #50CAFF;
+  box-sizing: border-box;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  color: #fff;
+  font-size: 28px;
 }
