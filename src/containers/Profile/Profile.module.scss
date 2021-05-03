@@ -1,6 +1,8 @@
 .profile {
   background: #FCFCFC;
   padding: 15px 40px 40px 20px;
+  height: calc(100vh - 55px);
+  box-sizing: border-box;
 }
 
 .listWrap {
@@ -25,4 +27,15 @@
   a {
     color: #50CAFF;
   }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1110px;
+}
+
+.card {
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
