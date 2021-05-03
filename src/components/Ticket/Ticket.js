@@ -1,11 +1,16 @@
-import s from './Ticket.module.scss'
-
+import * as cs from 'classnames'
 import user from '../../img/userPhoto.jpg'
 import { Button } from '../../common/Button/Button'
 
-export const Ticket = ({ data }) => {
+import s from './Ticket.module.scss'
+
+export const Ticket = ({ data, className }) => {
+  const ticketStyle = cs({
+    [s.ticket]: true,
+    [className]: className,
+  })
   return (
-    <div className={s.ticket}>
+    <div className={ticketStyle}>
       <h3 className={s.datetime}>Понедельник 15.06.20 | 15:30</h3>
       <div className={s.clinic}>
         <p className={s.address}>{'СПБ ГБУЗ "Городская поликлиника №25",'}</p>

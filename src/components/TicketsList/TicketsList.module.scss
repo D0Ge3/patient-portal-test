@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  &_horizontal {
+    flex-direction: row;
+  }
+}
+
+.item {
+  margin-right: 20px;
+  margin-bottom: 15px;
+  &_horizontal {
+    margin-bottom: 0px;
+  }
+}
