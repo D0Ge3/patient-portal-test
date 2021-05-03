@@ -1,0 +1,63 @@
+.ticket {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 5px #EBE7FF;
+  border-radius: 5px;
+  width: 475px;
+  height: 174px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.datetime {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.clinic {
+  margin-bottom: 10px;
+}
+.address {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+}
+.doctor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+}
+
+.name {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.specialty {
+  color: #EBE7FF;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  button {
+    height: 40px;
+  }
+}

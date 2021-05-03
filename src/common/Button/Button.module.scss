@@ -6,6 +6,7 @@
   text-decoration: none;
   color: white;
   font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   &:hover {
     background-color: darken($color: #7761FF, $amount: 2);
