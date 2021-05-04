@@ -10,6 +10,7 @@ export const ReportItem = ({
   textList,
   icon,
   className,
+  style,
 }) => {
   const itemStyle = cs({
     [s.item]: true,
@@ -26,7 +27,7 @@ export const ReportItem = ({
     [s.title_blue]: showBorder,
   })
   return (
-    <div className={itemStyle}>
+    <div className={itemStyle} style={style}>
       <div className={iconWrapStyle}>{icon}</div>
       <div className={s.content}>
         <h3 className={titleStyle}>{title}</h3>

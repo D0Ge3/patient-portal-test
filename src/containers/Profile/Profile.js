@@ -57,6 +57,7 @@ export const Profile = () => {
             ]}
           />
           <ReportItem
+            style={{ marginRight: 0 }}
             className={s.card}
             title="Результаты анализов"
             text="Вы можете узнать здесь результаты своих анализов"
@@ -69,6 +70,7 @@ export const Profile = () => {
             icon={<AddIcon />}
           />
           <ReportItem
+            style={{ marginRight: 0 }}
             className={s.card}
             title="История приемов"
             text="Вся информация о полученных услугах за все время хранится здесь"
