@@ -6,6 +6,9 @@ import { App } from './App'
 import reportWebVitals from './reportWebVitals'
 import './index.scss'
 
+import 'react-app-polyfill/ie11'
+import 'react-app-polyfill/stable'
+
 import { store } from './redux/store'
 
 ReactDOM.render(
