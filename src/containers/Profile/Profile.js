@@ -1,25 +1,45 @@
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { TicketsList } from '../../components/TicketsList/TicketsList'
 
-import s from './Profile.module.scss'
 import { ReportItem } from '../../components/ReportItem/ReportItem'
 import { MedReport } from '../../common/icons/MedReport'
 import { LabIcon } from '../../common/icons/LabIcon'
 import { AddIcon } from '../../common/icons/AddIcon'
 import { HistoryIcon } from '../../common/icons/HistoryIcon'
 
+import { getTickets } from '../../redux/ticketsActions'
+
+import s from './Profile.module.scss'
+import { Loader } from '../../common/Loader/Loader'
+
 export const Profile = () => {
+  const dispatch = useDispatch()
+  const tickets = useSelector((state) => state.tickets.tickets)
+  const isLoading = useSelector((state) => state.tickets.isLoading)
+  useEffect(() => {
+    dispatch(getTickets())
+    // eslint-disable-next-line
+  }, [])
   return (
     <div className={s.profile}>
       <div className={s.tickets}>
         <h3 className={s.title}>Записи на прием</h3>
-        <div className={s.listWrap}>
-          <TicketsList isHorizontal tickets={[1, 2]} />
-          <div className={s.link}>
-            <span>Еще 3 записи</span>
-            <Link to="/tickets">Подробнее</Link>
+        {isLoading ? (
+          <Loader style={{ marginLeft: 'calc(50% - 75px)' }} />
+        ) : (
+          <div className={s.listWrap}>
+            <TicketsList
+              isHorizontal
+              tickets={tickets.length ? [tickets[0], tickets[1]] : []}
+            />
+            <div className={s.link}>
+              <span>Еще {tickets.length - 2} записи</span>
+              <Link to="/tickets">Подробнее</Link>
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <div>
         <h3 className={s.title}>Электронная карта</h3>
