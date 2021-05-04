@@ -1,5 +1,7 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
+import { TicketsReducer } from './ticketsReducer'
+
 const middleware = getDefaultMiddleware({
   immutableCheck: false,
   serializableCheck: false,
@@ -7,7 +9,7 @@ const middleware = getDefaultMiddleware({
 })
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { tickets: TicketsReducer },
   middleware,
   devTools: process.env.NODE_ENV !== 'production',
 })

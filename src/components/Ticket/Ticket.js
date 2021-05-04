@@ -4,7 +4,7 @@ import { Button } from '../../common/Button/Button'
 
 import s from './Ticket.module.scss'
 
-export const Ticket = ({ data, className }) => {
+export const Ticket = ({ data, className, ind }) => {
   const ticketStyle = cs({
     [s.ticket]: true,
     [className]: className,
@@ -18,7 +18,12 @@ export const Ticket = ({ data, className }) => {
       </div>
       <div className={s.footer}>
         <div className={s.doctor}>
-          <img src={user} alt="" width="60" height="60" />
+          <img
+            src={`https://thispersondoesnotexist.com/image?v=${ind}`}
+            alt=""
+            width="60"
+            height="60"
+          />
           <div>
             <span className={s.name}>Малушко Т. Н.</span>
             <span className={s.specialty}>Хирургия</span>

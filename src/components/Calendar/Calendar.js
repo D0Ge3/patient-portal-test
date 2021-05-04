@@ -1,5 +1,5 @@
 import 'moment/locale/ru'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import moment from 'moment'
 import * as cs from 'classnames'
 
@@ -7,9 +7,12 @@ import { Arrow } from '../../common/icons/Arrow/Arrow'
 
 import s from './Calendar.module.scss'
 
-export const Calendar = () => {
+export const Calendar = ({ className }) => {
   const [date, setDate] = useState(moment())
-
+  const calendarStyle = cs({
+    [s.calendar]: true,
+    [className]: className,
+  })
   const dateStyle = (isWhite, isGrey) =>
     cs({
       [s.date]: true,
@@ -22,7 +25,7 @@ export const Calendar = () => {
     return str[0].toUpperCase() + str.slice(1)
   }
 
-  const renderDatesArr = () => {
+  const renderDates = () => {
     let days = []
     let startOfMonth = moment(date).startOf('month')
     let endOfMonth = moment(date).endOf('month')
@@ -56,7 +59,7 @@ export const Calendar = () => {
   }
 
   return (
-    <div className={s.calendar}>
+    <div className={calendarStyle}>
       <div className={s.header}>
         <Arrow
           mode="back"
@@ -80,7 +83,7 @@ export const Calendar = () => {
           <span>Сб</span>
           <span>Вс</span>
         </div>
-        <div className={s.dates}>{renderDatesArr()}</div>
+        <div className={s.dates}>{renderDates()}</div>
       </div>
     </div>
   )

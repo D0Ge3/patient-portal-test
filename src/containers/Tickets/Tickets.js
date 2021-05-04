@@ -1,13 +1,24 @@
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 
 import { CustomScrollbars } from '../../common/CustomScrollbars/CustomScrollbars'
 import { TicketsList } from '../../components/TicketsList/TicketsList'
 import { GoBackIcon } from '../../common/icons/GoBackIcon'
-import s from './Tickets.module.scss'
 import { Calendar } from '../../components/Calendar/Calendar'
+
+import { getTickets } from '../../redux/ticketsActions'
+
+import s from './Tickets.module.scss'
 
 export const Tickets = () => {
   const history = useHistory()
+  const dispatch = useDispatch()
+  const tickets = useSelector((state) => state.tickets.tickets)
+  console.log(tickets)
+  useEffect(() => {
+    dispatch(getTickets())
+  }, [])
   return (
     <div className={s.tickets}>
       <div className={s.listWrap}>
@@ -19,7 +30,7 @@ export const Tickets = () => {
           <TicketsList tickets={[1, 2, 3, 4, 5]} />
         </CustomScrollbars>
       </div>
-      <Calendar />
+      <Calendar className={s.calendar} />
     </div>
   )
 }
