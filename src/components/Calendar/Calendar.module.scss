@@ -24,6 +24,7 @@
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   background: #EBE7FF;
+  height: 424px;
 }
 
 .gridLegend {
@@ -53,6 +54,12 @@
   flex-direction: column;
   &_white {
     background: #fff;
+  }
+  &_grey {
+    background: transparent;
+    .day {
+      color: rgba($color: #000000, $alpha: 0.25);
+    }
   }
 }
 
