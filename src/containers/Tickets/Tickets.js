@@ -15,9 +15,10 @@ export const Tickets = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const tickets = useSelector((state) => state.tickets.tickets)
-  console.log(tickets)
+
   useEffect(() => {
     dispatch(getTickets())
+    // eslint-disable-next-line
   }, [])
   return (
     <div className={s.tickets}>
@@ -27,10 +28,10 @@ export const Tickets = () => {
           <h3>Мои записи</h3>
         </div>
         <CustomScrollbars style={{ width: '500px' }}>
-          <TicketsList tickets={[1, 2, 3, 4, 5]} />
+          <TicketsList tickets={tickets} />
         </CustomScrollbars>
       </div>
-      <Calendar className={s.calendar} />
+      <Calendar className={s.calendar} tickets={tickets} />
     </div>
   )
 }

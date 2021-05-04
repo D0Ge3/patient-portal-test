@@ -15,7 +15,7 @@ export const TicketsList = ({ tickets, isHorizontal }) => {
   return (
     <div className={listStyle}>
       {tickets.map((ticket) => (
-        <Ticket className={itemStyle} key={ticket} ind={ticket} />
+        <Ticket className={itemStyle} key={ticket.id} ticket={ticket} />
       ))}
     </div>
   )

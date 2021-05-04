@@ -1,13 +1,13 @@
-import 'moment/locale/ru'
 import { useState } from 'react'
 import moment from 'moment'
 import * as cs from 'classnames'
+import { ucFirst } from '../../utils/ucFirst'
 
 import { Arrow } from '../../common/icons/Arrow/Arrow'
 
 import s from './Calendar.module.scss'
 
-export const Calendar = ({ className }) => {
+export const Calendar = ({ className, tickets }) => {
   const [date, setDate] = useState(moment())
   const calendarStyle = cs({
     [s.calendar]: true,
@@ -19,12 +19,17 @@ export const Calendar = ({ className }) => {
       [s.date_white]: isWhite,
       [s.date_grey]: isGrey,
     })
-  const ucFirst = (str) => {
-    if (!str) return str
+  const getTicketsCountByDate = (date) => {
+    const inpDate = moment(date).format('DD.MM.YY')
+    let count = 0
+    tickets.forEach((ticket) => {
+      if (moment.unix(ticket.date).format('DD.MM.YY') === inpDate) {
+        count++
+      }
+    })
 
-    return str[0].toUpperCase() + str.slice(1)
+    return count ? count : null
   }
-
   const renderDates = () => {
     let days = []
     let startOfMonth = moment(date).startOf('month')
@@ -40,22 +45,25 @@ export const Calendar = ({ className }) => {
     if (days[days.length - 1].weekday() !== 6) {
       days = [...days, ...Array(6 - days[days.length - 1].weekday()).fill(null)]
     }
-    return days.map((day, index) => (
-      <div
-        key={day ? day.format('x') : index}
-        className={dateStyle(
-          day !== null,
-          day !== null && moment(day).diff(moment(), 'days') < 0
-        )}
-      >
-        <span className={s.day}>{day ? day.format('D') : null}</span>
-        {index === 10 && (
-          <div className={s.event}>
-            <span>2</span>
-          </div>
-        )}
-      </div>
-    ))
+    return days.map((day, index) => {
+      const countTickets = day ? getTicketsCountByDate(day) : null
+      return (
+        <div
+          key={day ? day.format('x') : index}
+          className={dateStyle(
+            day !== null,
+            day !== null && moment(day).diff(moment(), 'days') < 0
+          )}
+        >
+          <span className={s.day}>{day ? day.format('D') : null}</span>
+          {countTickets && (
+            <div className={s.event}>
+              <span>{countTickets}</span>
+            </div>
+          )}
+        </div>
+      )
+    })
   }
 
   return (
