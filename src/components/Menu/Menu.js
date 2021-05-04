@@ -11,6 +11,7 @@ import { HelpIcon } from '../../common/icons/HelpIcon'
 import { Button } from '../../common/Button/Button'
 
 import s from './Menu.module.scss'
+
 import logo from '../../img/companyLogo.png'
 
 export const Menu = ({ className }) => {

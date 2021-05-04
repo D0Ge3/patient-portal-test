@@ -1,6 +1,8 @@
 import * as cs from 'classnames'
 import moment from 'moment'
+
 import { Button } from '../../common/Button/Button'
+
 import { ucFirst } from '../../utils/ucFirst'
 
 import s from './Ticket.module.scss'

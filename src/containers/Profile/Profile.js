@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { TicketsList } from '../../components/TicketsList/TicketsList'
 
+import { Loader } from '../../common/Loader/Loader'
+import { TicketsList } from '../../components/TicketsList/TicketsList'
 import { ReportItem } from '../../components/ReportItem/ReportItem'
 import { MedReport } from '../../common/icons/MedReport'
 import { LabIcon } from '../../common/icons/LabIcon'
@@ -12,7 +13,6 @@ import { HistoryIcon } from '../../common/icons/HistoryIcon'
 import { getTickets } from '../../redux/ticketsActions'
 
 import s from './Profile.module.scss'
-import { Loader } from '../../common/Loader/Loader'
 
 export const Profile = () => {
   const dispatch = useDispatch()

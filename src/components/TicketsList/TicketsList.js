@@ -1,4 +1,5 @@
 import * as cs from 'classnames'
+
 import { Ticket } from '../Ticket/Ticket'
 
 import s from './TicketsList.module.scss'

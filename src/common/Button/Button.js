@@ -1,4 +1,5 @@
 import * as cs from 'classnames'
+
 import s from './Button.module.scss'
 
 export const Button = ({ className, ...rest }) => {

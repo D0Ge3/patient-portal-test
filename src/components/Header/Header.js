@@ -1,11 +1,13 @@
 import * as cs from 'classnames'
-import s from './Header.module.scss'
+
 import { SearchIcon } from '../../common/icons/SearchIcon'
 import { BellIcon } from '../../common/icons/BellIcon'
 import { EyeIcon } from '../../common/icons/EyeIcon'
+import { OpenIcon } from '../../common/icons/OpenIcon'
+
+import s from './Header.module.scss'
 
 import photo from '../../img/userPhoto.jpg'
-import { OpenIcon } from '../../common/icons/OpenIcon'
 
 export const Header = ({ className }) => {
   return (
